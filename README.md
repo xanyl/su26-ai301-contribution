@@ -1,15 +1,15 @@
 # Contribution [#]: [Issue Title]
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** [1]  
+**Student:** Anil Tiwari  
+**Issue:** [[GitHub issue link]  ](https://github.com/documentdb/functional-tests/issues/207)
+**Status:** [Phase I]
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose issue #207, "Add compatibility test for $bsonSize", because it aligns perfectly with my Python skills and my goal to learn more about database testing frameworks. The issue is well-scoped, labeled as a "good first issue," and has clear existing patterns to follow for expression-operator tests.
 
 ---
 
