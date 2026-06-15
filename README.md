@@ -17,19 +17,19 @@ I chose issue #207, "Add compatibility test for $bsonSize", because it aligns pe
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+The documentdb/functional-tests framework is designed to validate DocumentDB functionality against MongoDB. Currently, the framework lacks automated test coverage for the $bsonSize aggregation operator, meaning there is no automated way to ensure DocumentDB calculates BSON expression sizes correctly.
 
 ### Expected Behavior
 
-[What should happen?]
+The testing framework should include functional tests (using pytest) that verify the $bsonSize operator correctly calculates and returns the size of a given BSON object/expression in bytes.
 
 ### Current Behavior
 
-[What actually happens?]
+No tests exist for the $bsonSize operator.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+The tests/aggregate/ directory (where a new test file, e.g., test_bsonsize.py, will be created).
 
 ---
 
