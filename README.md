@@ -45,7 +45,7 @@ Cloned the `documentdb/functional-tests` repository and set up a Python virtual 
 4. **Observed result:** Tests pass, but no `$bsonSize` tests are executed. The missing test coverage gap is confirmed.
 
 ### Reproduction Evidence
-- **Working Branch:** https://github.com/xanyl/functional-tests/tree/issue-207-bsonsize
+- **Working Branch:** https://github.com/xanyl/functional-tests/
 
 ---
 
