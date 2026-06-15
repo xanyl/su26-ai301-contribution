@@ -36,45 +36,32 @@ I chose issue #207, "Add compatibility test for $bsonSize", because it aligns pe
 ## Reproduction Process
 
 ### Environment Setup
-
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+Cloned the `documentdb/functional-tests` repository and set up a Python virtual environment. Installed dependencies using `pip install -r requirements.txt`. Started a local MongoDB instance to serve as the baseline test engine.
 
 ### Steps to Reproduce
-
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Search the codebase for existing `$bsonSize` tests using the command: `grep -r "$bsonSize" tests/`
+2. Observe that there are no existing functional test files or assertions covering the `$bsonSize` operator.
+3. Run the existing aggregation test suite to ensure the baseline environment works: `pytest -m aggregate --connection-string mongodb://localhost:27017`
+4. **Observed result:** Tests pass, but no `$bsonSize` tests are executed. The missing test coverage gap is confirmed.
 
 ### Reproduction Evidence
-
-- **Commit showing reproduction:** [Link to commit in your fork]
-- **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **Working Branch:** https://github.com/xanyl/functional-tests/tree/issue-207-bsonsize
 
 ---
 
 ## Solution Approach
 
-### Analysis
-
-[Your analysis of the root cause - what's causing the issue?]
-
-### Proposed Solution
-
-[High-level description of your fix approach]
-
 ### Implementation Plan
-
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
-
-**Match:** [What similar patterns/solutions exist in the codebase?]
-
-**Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+* **Understand:** The DocumentDB functional testing framework lacks test coverage for the `$bsonSize` aggregation operator. We need to add tests to verify that DocumentDB correctly calculates and returns the BSON size of a given expression in bytes.
+* **Match:** Existing tests in the `tests/aggregate/` directory (like `test_query_operators.py`) provide a pattern for testing expression operators. I will match their structure for fixtures, data insertion, and custom assertions (e.g., `assert_document_match`).
+* **Plan:**
+    1. Create a new test file `tests/aggregate/test_bsonsize.py`.
+    2. Write a `test_bsonsize_basic` function that inserts documents with various data types (string, object, array, integer).
+    3. Execute an aggregate pipeline using `{"$project": {"size": {"$bsonSize": "$field"}}}`.
+    4. Write tests for edge cases (e.g., when the field is null or missing).
+    5. Add appropriate standard markers like `@pytest.mark.aggregate`.
 
 **Implement:** [Link to your branch/commits as you work]
 
