@@ -53,30 +53,25 @@ The changes will primarily take place within the `packages/widgets` (or equivale
 ### Implementation Plan
 Using UMPIRE framework (adapted):
 
-* **Understand:** The DocumentDB functional testing framework lacks test coverage for the `$bsonSize` aggregation operator. We need to add tests to verify that DocumentDB correctly calculates and returns the BSON size of a given expression in bytes.
-* **Match:** Existing tests in the `tests/aggregate/` directory (like `test_query_operators.py`) provide a pattern for testing expression operators. I will match their structure for fixtures, data insertion, and custom assertions (e.g., `assert_document_match`).
+* **Understand:** We need to build a new React component for the Homarr dashboard that connects to existing media integrations (like Radarr/Sonarr) to fetch and display the counts of missing and queued media.
+* **Match:** I will look at existing widgets in the `packages/widgets` directory (such as the calendar or other Servarr-related widgets) to understand Homarr's pattern for component structure, styling (Mantine), and data fetching (tRPC/React Query).
 * **Plan:**
-    1. Create a new test file `tests/aggregate/test_bsonsize.py`.
-    2. Write a `test_bsonsize_basic` function that inserts documents with various data types (string, object, array, integer).
-    3. Execute an aggregate pipeline using `{"$project": {"size": {"$bsonSize": "$field"}}}`.
-    4. Write tests for edge cases (e.g., when the field is null or missing).
-    5. Add appropriate standard markers like `@pytest.mark.aggregate`.
-
-**Implement:** [Link to your branch/commits as you work]
-
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
-
-**Evaluate:** [How will you verify it works?]
-
----
+    1.  Locate the widget directory and create a new folder/files for the `missing-queued` widget.
+    2.  Investigate how Homarr currently communicates with the *Arr stack APIs to see if endpoints for "missing" and "queued" already exist or need to be added.
+    3.  Build the frontend UI component to display the numbers clearly.
+    4.  Register the new widget in Homarr's widget configuration so it appears in the "Add Widget" menu.
+    5.  Test the widget locally using a mock or real connection to Radarr/Sonarr.
+* **Implement:** [Link to your branch/commits as you work]
+* **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
+* **Evaluate:** [How will you verify it works?]
 
 ## Testing Strategy
 
-### Unit Tests
-
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
+### Unit / Manual Tests
+- [ ] Verify the widget appears in the "Add Widget" menu.
+- [ ] Verify the widget correctly displays the "missing" count from a connected integration.
+- [ ] Verify the widget correctly displays the "queued" count from a connected integration.
+- [ ] Verify the widget handles states where no integration is connected gracefully (e.g., shows a warning or placeholder). 
 
 ### Integration Tests
 
