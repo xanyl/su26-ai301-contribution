@@ -84,11 +84,21 @@ Using UMPIRE framework (adapted):
 
 ---
 
-## Implementation Notes
+### Week 3 Progress (Phase III Build - In Progress)
 
-### Week [X] Progress
+**What I built so far:**
+- Scaffolded the base React UI component for the "Missing / Queued Media" widget in the `packages/widgets` directory.
+- Reviewed Homarr's existing Servarr (Radarr/Sonarr) widgets to understand the data fetching patterns.
+- Started mapping out the tRPC endpoints needed to pull the "missing" and "queued" counts from the *Arr APIs.
 
-[What you built this week, challenges faced, decisions made]
+**Challenges faced:**
+- Currently figuring out the best way to mock the Radarr/Sonarr API response locally so I can test the UI without a full media server setup.
+- Encountered some initial TypeScript type errors when passing the integration configuration props down to the new widget, but working through them.
+
+**Next Steps:**
+- Complete the tRPC integration to successfully fetch live data.
+- Wire up the fetched data to the Mantine UI components.
+- Write unit tests for the widget's empty/disconnected states.
 
 ### Week [Y] Progress
 
