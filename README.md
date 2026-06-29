@@ -73,16 +73,6 @@ Using UMPIRE framework (adapted):
 - [ ] Verify the widget correctly displays the "queued" count from a connected integration.
 - [ ] Verify the widget handles states where no integration is connected gracefully (e.g., shows a warning or placeholder). 
 
-### Integration Tests
-
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
-
-### Manual Testing
-
-[What you tested manually and results]
-
----
 
 ### Week 3 Progress (Phase III Build - In Progress)
 
@@ -100,31 +90,15 @@ Using UMPIRE framework (adapted):
 - Wire up the fetched data to the Mantine UI components.
 - Write unit tests for the widget's empty/disconnected states.
 
-### Week [Y] Progress
+## Phase IV: Submit & Iterate
 
-[Continue documenting as you work]
+**PR Link:** https://github.com/homarr-labs/homarr/pull/6078
 
-### Code Changes
+**PR Description:** Implemented the requested widget to display missing and queued movies/episodes from Radarr and Sonarr integrations on the Homarr dashboard, complete with pagination and responsive sizing. 
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
-- **Approach decisions:** [Why you chose certain approaches]
+**Maintainer Feedback:** Received automated review feedback from CodeRabbit identifying a few minor adjustments needed (e.g., MDX import placement, access table deduplication, and `pageSize` parameter passing). Currently addressing these and awaiting human maintainer review.
 
----
-
-## Pull Request
-
-**PR Link:** [GitHub PR URL when submitted]
-
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
-
-**Maintainer Feedback:**
-- [Date]: [Summary of feedback received]
-- [Date]: [How you addressed it]
-
-**Status:** [Awaiting review / Iterating / Approved / Merged]
-
----
+**Status:** Iterating / Awaiting review
 
 ## Learnings & Reflections
 
