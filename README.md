@@ -92,11 +92,12 @@ Using UMPIRE framework (adapted):
 
 ## Phase IV: Submit & Iterate
 
+
 **PR Link:** https://github.com/homarr-labs/homarr/pull/6078
 
 **PR Description:** Implemented the requested widget to display missing and queued movies/episodes from Radarr and Sonarr integrations on the Homarr dashboard, complete with pagination and responsive sizing. 
 
-**Maintainer Feedback:** Received automated review feedback from CodeRabbit identifying a few minor adjustments needed (e.g., MDX import placement, access table deduplication, and `pageSize` parameter passing). Currently addressing these and awaiting human maintainer review.
+**Maintainer Feedback:** Received automated review feedback from CodeRabbit identifying a few minor adjustments needed. Currently addressing these and awaiting human maintainer review.
 
 **Status:** Iterating / Awaiting review
 
