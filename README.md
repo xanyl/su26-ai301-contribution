@@ -1,3 +1,22 @@
+# Contribution [2]: fix: zero contrast text on User Management hover in dark mode
+**Contribution Number:** 2
+**Student:** Anil Tiwari
+**Issue:** [ls1intum/Artemis#12403](https://github.com/ls1intum/Artemis/issues/12403)
+**Status:** Phase I
+
+## Why I Chose This Issue
+I chose issue #12403 in the Artemis repository because it's a well-defined UI bug with a clear reproduction path. It is labeled as a "good first issue" and "small", making it highly feasible to complete within the remaining timeframe of the AI301 capstone. It provides a great opportunity to dive into a new, large-scale codebase (Artemis) and learn about its frontend styling and dark mode implementation.
+
+## Understanding the Issue
+### Problem Description
+In the Artemis application, when navigating to the 'Manage' -> 'Overview' page while using dark mode, hovering over the "User management" button causes the text to have zero contrast against the button background. This renders the text completely invisible and unreadable to the user.
+
+### Expected Behavior
+The "User management" text should remain clearly readable when hovered over, maintaining sufficient contrast against the button's hover-state background color in dark mode.
+
+### Affected Components
+The issue is isolated to the frontend user interface. It will likely require modifying the CSS/SCSS stylesheets—specifically targeting the hover state of the "User management" button (or the shared button component it utilizes) when the dark mode theme is active.
+
 # Contribution [1]: feat: widget to display missing / queued movies & episodes
 
 **Contribution Number:** [1]
