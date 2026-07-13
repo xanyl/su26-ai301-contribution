@@ -110,29 +110,21 @@ Using UMPIRE framework (adapted):
 - Write unit tests for the widget's empty/disconnected states.
 
 ## Phase IV: Submit & Iterate
-
-
 **PR Link:** https://github.com/homarr-labs/homarr/pull/6078
-
-**PR Description:** Implemented the requested widget to display missing and queued movies/episodes from Radarr and Sonarr integrations on the Homarr dashboard, complete with pagination and responsive sizing. 
-
-**Maintainer Feedback:** Received automated review feedback from CodeRabbit identifying a few minor adjustments needed. Currently addressing these and awaiting human maintainer review.
-
-**Status:** Iterating / Awaiting review
+**PR Description:** Implemented the requested widget to display missing and queued movies/episodes from Radarr and Sonarr integrations on the Homarr dashboard, complete with pagination and responsive sizing.
+**Maintainer Feedback:** Received automated review feedback from CodeRabbit identifying a few minor adjustments needed. Addressed these, and the PR has now been successfully merged by the maintainer!
+**Status:** Merged
 
 ## Learnings & Reflections
 
 ### Technical Skills Gained
 
-[What you learned technically]
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
 
 ---
 
