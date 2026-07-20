@@ -34,7 +34,7 @@ The issue is isolated to the frontend user interface. It will likely require mod
 6. *Observed result:* The text color blends into the button's hover background color, resulting in zero contrast and making the text entirely unreadable.
 
 ### Reproduction Evidence
-- **Working Branch:** [https://github.com/xanyl/Artemis/tree/fix/12403-dark-mode-hover] *(Note: Update this link once you create and push your branch)*
+- **Working Branch:** [https://github.com/xanyl/Artemis/tree/fix/12403-dark-mode-hover] 
 
 ## Solution Approach
 
