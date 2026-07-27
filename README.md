@@ -1,8 +1,6 @@
 # Contribution [2]: fix: zero contrast text on User Management hover in dark mode
-**Contribution Number:** 2
-**Student:** Anil Tiwari
-**Issue:** [ls1intum/Artemis#12403](https://github.com/ls1intum/Artemis/issues/12403)
-**Status:** Phase II
+
+*Contribution Number:* 2 | *Student:* Anil Tiwari | *Issue:* [ls1intum/Artemis#12403](https://github.com/ls1intum/Artemis/issues/12403) | *Status:* Phase IV (Iterating)
 
 ## Why I Chose This Issue
 I chose issue #12403 in the Artemis repository because it's a well-defined UI bug with a clear reproduction path. It is labeled as a "good first issue" and "small", making it highly feasible to complete within the remaining timeframe of the AI301 capstone. It provides a great opportunity to dive into a new, large-scale codebase (Artemis) and learn about its frontend styling and dark mode implementation.
@@ -18,9 +16,8 @@ The "User management" text should remain clearly readable when hovered over, mai
 The issue is isolated to the frontend user interface. It will likely require modifying the CSS/SCSS stylesheets—specifically targeting the hover state of the "User management" button (or the shared button component it utilizes) when the dark mode theme is active.
 
 ## Reproduction Process
-
 ### Environment Setup
-1. Forked the `ls1intum/Artemis` repository.
+1. Forked the ls1intum/Artemis repository.
 2. Cloned the repository locally.
 3. Followed the Artemis developer setup guide to install dependencies and start the local development environment (frontend and backend).
 4. Created a local test account with appropriate permissions to access the 'Manage' dashboard.
@@ -28,35 +25,44 @@ The issue is isolated to the frontend user interface. It will likely require mod
 ### Steps to Reproduce
 1. Start the Artemis development server and access the local instance in the browser.
 2. Log in with an account that has access to the management features.
-3. Enable **Dark Mode** in the application settings or user profile.
-4. Navigate to **Manage -> Overview**.
-5. Hover your cursor over the **User management** button.
+3. Enable *Dark Mode* in the application settings or user profile.
+4. Navigate to *Manage -> Overview* .
+5. Hover your cursor over the *User management* button.
 6. *Observed result:* The text color blends into the button's hover background color, resulting in zero contrast and making the text entirely unreadable.
 
 ### Reproduction Evidence
-- **Working Branch:** [https://github.com/xanyl/Artemis/tree/fix/12403-dark-mode-hover] 
+- *Working Branch:* [https://github.com/xanyl/Artemis/tree/fix/user-management-hover-contrast-12403](https://github.com/xanyl/Artemis/tree/fix/user-management-hover-contrast-12403)
 
 ## Solution Approach
-
 ### Implementation Plan
 Using the UMPIRE framework:
-- **Understand:** The CSS/SCSS styling for the "User management" button lacks a proper text color override for the `:hover` state when the dark theme is active, causing it to inherit a color that lacks contrast against the dark hover background.
-- **Match:** I will inspect other standard buttons within the Artemis dark mode UI to identify the correct contrast variables (e.g., standard SCSS variables for text and background on hover) to ensure my fix matches the project's existing design system.
-- **Plan:**
+- *Understand:* The CSS/SCSS styling for the "User management" button lacks a proper text color override for the :hover state when the dark theme is active, causing it to inherit a color that lacks contrast against the dark hover background.
+- *Match:* I will inspect other standard buttons within the Artemis dark mode UI to identify the correct contrast variables (e.g., standard SCSS variables for text and background on hover) to ensure my fix matches the project's existing design system.
+- *Plan:*
   1. Use browser developer tools to inspect the affected button and locate the exact component and SCSS file responsible for its styling.
-  2. Identify how Artemis handles dark mode theming (e.g., through a `.theme-dark` class or specific CSS variables).
-  3. Update the `:hover` state for this button class to use a high-contrast text color against the dark background.
+  2. Identify how Artemis handles dark mode theming (e.g., through a .theme-dark class or specific CSS variables).
+  3. Update the :hover state for this button class to use a high-contrast text color against the dark background.
   4. Check the button in Light Mode to ensure the CSS change doesn't cause unintended regressions.
-- **Implement:** [Link to your commits as you work]
-- **Review:** Ensure the CSS changes follow Artemis's styling guidelines, utilizing existing design tokens/variables rather than hardcoded hex values wherever possible.
-- **Evaluate:** Manually toggle between light and dark themes to verify the expected behavior in both states.
+- *Implement:* [Commit 2e2cfc1 - Added theme-aware hover color styling](https://github.com/ls1intum/Artemis/pull/13285/commits/2e2cfc10a9569ecb614db5fba04a2825c5a59697)
+- *Review:* Ensure the CSS changes follow Artemis's styling guidelines, utilizing existing design tokens/variables rather than hardcoded hex values wherever possible.
+- *Evaluate:* Manually toggle between light and dark themes to verify the expected behavior in both states.
 
-### Testing Strategy
-
+## Testing Strategy
 ### Manual Tests
-- [ ] Verify the text on the "User management" button is clearly readable when hovered in Dark Mode.
-- [ ] Verify the text on the "User management" button remains readable when hovered in Light Mode.
-- [ ] Verify that no other adjacent buttons on the 'Manage -> Overview' page were negatively impacted by the styling changes.
+- [x] Verify the text on the "User management" button is clearly readable when hovered in Dark Mode.
+- [x] Verify the text on the "User management" button remains readable when hovered in Light Mode.
+- [x] Verify that no other adjacent buttons on the 'Manage -> Overview' page were negatively impacted by the styling changes.
+
+## Phase III: Build 
+*What I built:*
+- Added a theme-scoped `--overview-card-hover-color` custom property next to the existing background property in both `theme-default.scss` and `theme-dark.scss`.
+- Referenced `--overview-card-hover-color` explicitly in `.user-mgmt-btn:hover` in the TypeScript component, with a fallback to `--bs-body-color`. This ensures the hover background and text color are always sourced from the same theme file, fixing the contrast issue in dark mode without altering the light mode visuals.
+
+## Phase IV: Submit & Iterate
+*PR Link:* [ls1intum/Artemis#13285](https://github.com/ls1intum/Artemis/pull/13285)
+*PR Description:* Fix zero-contrast text on User Management hover in dark mode.
+*Maintainer Feedback:* The CodeRabbit bot requested a minor change to adhere to client UI guidelines: replace the raw hexadecimal colors (`#f8f9fa` and `#212529`) with the corresponding imported dark- and light-theme text SCSS tokens.
+*Status:* Changes requested; revisions in progress.
 
 # Contribution [1]: feat: widget to display missing / queued movies & episodes
 
