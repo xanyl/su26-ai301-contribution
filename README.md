@@ -126,9 +126,9 @@ Using UMPIRE framework (adapted):
     3.  Build the frontend UI component to display the numbers clearly.
     4.  Register the new widget in Homarr's widget configuration so it appears in the "Add Widget" menu.
     5.  Test the widget locally using a mock or real connection to Radarr/Sonarr.
-* **Implement:** [Link to your branch/commits as you work]
-* **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
-* **Evaluate:** [How will you verify it works?]
+- **Implement:** Scaffolded the initial UI and tRPC routes on my working branch: [feat/missing-queued-widget](https://github.com/xanyl/homarr/tree/feat/missing-queued-widget).
+- **Review:** I will verify that my code adheres to Homarr's Mantine UI styling guidelines, ensures strict TypeScript typings for the new API responses, and successfully passes the project's existing linting (`pnpm lint`) and formatting checks prior to opening a PR.
+- **Evaluate:** I will manually test the widget on my local dashboard development server. I will connect it to a mock Radarr/Sonarr instance and verify that the missing/queued numbers displayed on the widget exactly match the mocked API endpoint responses.
 
 ## Testing Strategy
 
