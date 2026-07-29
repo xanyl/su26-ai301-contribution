@@ -97,9 +97,9 @@ The changes will primarily take place within the `packages/widgets` (or equivale
 ## Reproduction Process
 
 ### Environment Setup
-1. Forked the `homarr-labs/homarr` repository.
+1. Forked the homarr-labs/homarr repository.
 2. Cloned the repository locally.
-3. Updated the global `pnpm` engine to the required version (>=11.6.0).
+3. **Challenge:** During the initial `pnpm install`, I encountered a strict engine mismatch error because my local `pnpm` version was outdated. **Fix:** I resolved this by updating my global pnpm engine to `>=11.6.0` (using `npm install -g pnpm@latest`), which allowed the dependencies to install successfully.
 4. Installed project dependencies using `pnpm install`.
 5. Created a local `.env` file from the `.env.example` template.
 
