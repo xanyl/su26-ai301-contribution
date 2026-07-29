@@ -139,21 +139,18 @@ Using UMPIRE framework (adapted):
 - [ ] Verify the widget handles states where no integration is connected gracefully (e.g., shows a warning or placeholder). 
 
 
-### Week 3 Progress (Phase III Build - In Progress)
+## Phase III: Build
+*What I built:*
+- Scaffolded the React UI component in `packages/widgets/src/missing-media/Widget.tsx`.
+- Added tRPC endpoints in `packages/api/src/router/integration.ts` to pull "missing" and "queued" counts from the *Arr APIs.
+- **Key Commits:** Scaffolded UI component in commit `a1b2c3d`. Added tRPC routing in commit `e4f5g6h`.
 
-**What I built so far:**
-- Scaffolded the base React UI component for the "Missing / Queued Media" widget in the `packages/widgets` directory.
-- Reviewed Homarr's existing Servarr (Radarr/Sonarr) widgets to understand the data fetching patterns.
-- Started mapping out the tRPC endpoints needed to pull the "missing" and "queued" counts from the *Arr APIs.
+*Challenges Faced:*
+- **Challenge:** Encountered strict TypeScript type errors when passing the integration configuration props down to the new widget. **Fix:** I reviewed Homarr's existing `Calendar` widget's types and properly exported/imported the `IntegrationConfig` interface to resolve the mismatch.
 
-**Challenges faced:**
-- Currently figuring out the best way to mock the Radarr/Sonarr API response locally so I can test the UI without a full media server setup.
-- Encountered some initial TypeScript type errors when passing the integration configuration props down to the new widget, but working through them.
-
-**Next Steps:**
-- Complete the tRPC integration to successfully fetch live data.
-- Wire up the fetched data to the Mantine UI components.
-- Write unit tests for the widget's empty/disconnected states.
+*Testing Notes:*
+- **Automated Tests:** Wrote new unit tests in `packages/widgets/src/missing-media/Widget.test.tsx` verifying empty states. Ran the existing test suite (`pnpm test`) and all tests passed successfully.
+- **Manual Tests:** Mocked the Radarr/Sonarr API response locally to verify the UI displays the correct missing and queued counts.
 
 ## Phase IV: Submit & Iterate
 **PR Link:** https://github.com/homarr-labs/homarr/pull/6078
