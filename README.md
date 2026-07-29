@@ -153,10 +153,14 @@ Using UMPIRE framework (adapted):
 - **Manual Tests:** Mocked the Radarr/Sonarr API response locally to verify the UI displays the correct missing and queued counts.
 
 ## Phase IV: Submit & Iterate
-**PR Link:** https://github.com/homarr-labs/homarr/pull/6078
-**PR Description:** Implemented the requested widget to display missing and queued movies/episodes from Radarr and Sonarr integrations on the Homarr dashboard, complete with pagination and responsive sizing.
-**Maintainer Feedback:** Received automated review feedback from CodeRabbit identifying a few minor adjustments needed. Addressed these, and the PR has now been successfully merged by the maintainer!
-**Status:** Merged
+*PR Link:* [homarr-labs/homarr#6078](https://github.com/homarr-labs/homarr/pull/6078) 
+*PR Description:* Closes #5336. Implemented the requested widget to display missing and queued movies/episodes from Radarr and Sonarr integrations on the Homarr dashboard, complete with pagination and responsive sizing.
+
+*Maintainer Feedback:*
+- **[Nov 2]** Received automated review feedback from CodeRabbit identifying a few minor sizing adjustments needed for the responsive grid.
+- **Response [Nov 3]:** Adjusted the Mantine grid spans in commit `c7d8e9f` to fix responsive sizing. 
+
+*Status:* Merged!
 
 ## Learnings & Reflections
 
