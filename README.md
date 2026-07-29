@@ -165,18 +165,14 @@ Using UMPIRE framework (adapted):
 ## Learnings & Reflections
 
 ### Technical Skills Gained
-
+- Gained hands-on experience navigating large-scale monorepos (Homarr) and legacy Java/TypeScript codebases (Artemis).
+- Deepened my understanding of React, tRPC data fetching, and Next.js routing.
+- Learned how to properly implement theme-aware SCSS variables for dark/light mode toggles in a strict design system.
 
 ### Challenges Overcome
-
+- Overcame the initial intimidation of setting up complex local development environments involving multiple backend/frontend services and strict node engine requirements.
+- Learned how to read and adapt to existing project conventions (like using specific SCSS tokens or Mantine UI components) rather than writing custom code from scratch.
 
 ### What I'd Do Differently Next Time
-
-
----
-
-## Resources Used
-
-- [Link to helpful documentation]
-- [Tutorial or Stack Overflow post that helped]
-- [GitHub issues or discussions that helped]
+- I would spend more time investigating the project's existing UI components and test helper functions *before* writing any code, to avoid having to refactor during the PR review phase. 
+- I would also open a "Draft PR" earlier in the process to get maintainer feedback on my approach before fully building out the feature.
