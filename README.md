@@ -90,7 +90,7 @@ A new widget needs to be created for the Homarr dashboard. This widget should co
 There is currently no dedicated widget to display missing or queued media statistics directly on the Homarr dashboard.
 
 ### Affected Components
-The changes will primarily take place within the Homarr monorepo. Specifically, I will need to create a new component file for the UI, such as `packages/widgets/src/missing-media/Widget.tsx`. I will also need to modify or add to the relevant tRPC router files (e.g., `packages/api/src/router/integration.ts` or `servarr.ts`) to establish the endpoints that fetch the missing and queued data from the Radarr/Sonarr APIs.
+The changes will primarily take place within the Homarr monorepo. Specifically, I will need to create a new component file for the UI,`packages/widgets/src/missing-media/Widget.tsx`. I will also need to modify or add to the relevant tRPC router files ( `packages/api/src/router/integration.ts` and `servarr.ts`) to establish the endpoints that fetch the missing and queued data from the Radarr/Sonarr APIs.
 
 ## Reproduction Process
 
